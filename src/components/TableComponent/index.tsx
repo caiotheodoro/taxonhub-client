@@ -14,7 +14,7 @@ import {
 import { Pagination } from "../Pagination/index";
 import { useEffect, useState } from "react";
 
-let columns = [
+const columns = [
   ['Sinônimo de','Familia respectiva'],
   ['Familia','País', 'Ano', 'Mês', 'Dia', 'Lat', 'Long']
 ];
@@ -27,7 +27,7 @@ export function TableComponent({ model, ...rest }: DatasetListProps) {
   const [page, setPage] = useState(1);
   const [items, setItems] = useState<DatasetProps[]>([]);
   useEffect(() => {
-    let newItems = dataset.dataset.slice((page - 1) * 3, page * 3);
+    const newItems = dataset.dataset.slice((page - 1) * 3, page * 3);
     setItems(newItems);
   }, [page, dataset.dataset]);
 
@@ -78,10 +78,10 @@ export function TableComponent({ model, ...rest }: DatasetListProps) {
                   </Th>
                   <Th color="gray.primary">Nome buscado</Th>
                   <Th color="gray.primary">Nome retornado</Th>
-                  {isWideVersion && <Th color="gray.primary">Nome aceito/sinônimo</Th>}
+                  {isWideVersion ? <Th color="gray.primary">Nome aceito/sinônimo</Th> : null}
                   {columns[model !== 'occurrency' ? 0 : 1].map((column, index) => {
                     return (
-                      <Th color="gray.primary">{column}</Th>
+                      <Th key={index} color="gray.primary">{column}</Th>
                     )
                   })}
                 </Tr>

@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-import { FiHome } from "react-icons/fi";
 import { InfoCard } from "./index";
 
 

@@ -1,6 +1,6 @@
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/router";
-import { cloneElement, ReactElement, useEffect, useMemo, useState } from "react";
+import { cloneElement, ReactElement, useMemo } from "react";
 import React from "react";
 import { Flex } from "@chakra-ui/react";
 import { useDataset } from "../../../hooks/useDataset";

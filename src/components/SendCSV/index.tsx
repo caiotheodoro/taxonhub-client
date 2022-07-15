@@ -1,4 +1,4 @@
-import { Button, Flex, IconButton, Input, useOutsideClick } from "@chakra-ui/react";
+import { Flex, IconButton, Input } from "@chakra-ui/react";
 import { ChangeEvent, useRef, useState } from "react";
 import { FiUpload } from "react-icons/fi";
 import { toast } from "react-toastify";

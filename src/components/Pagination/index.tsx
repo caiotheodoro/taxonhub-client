@@ -1,4 +1,4 @@
-import { Stack, Box, Text, Input } from '@chakra-ui/react';
+import { Stack, Box, Text } from '@chakra-ui/react';
 import { PaginationItem } from './PaginationItem';
 
 interface PaginationProps {

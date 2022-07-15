@@ -1,20 +1,14 @@
-import { Box, Container, Flex, Spinner } from '@chakra-ui/react'
+import { Box, Container, Flex } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { FiDownload } from 'react-icons/fi'
 import { CustomButton } from '../components/CustomButton'
 import { SendCSV } from '../components/SendCSV'
 import { Stepper } from '../components/Stepper'
 import { TableComponent } from '../components/TableComponent'
-import { api } from '../services/api'
 import { v4 as uuidv4 } from 'uuid'
 import { parseCookies, setCookie } from 'nookies'
 import { useDataset } from '../hooks/useDataset'
 import { DoSearch } from '../components/DoSearch'
-
-
-
-
-//generate random data with TaxonomiesListProps interface
 
 interface TaxonomiesPageProps {
   token: string;
@@ -25,7 +19,7 @@ const Ocurrencies = ({token}: TaxonomiesPageProps) => {
 
 
 
-  let components = [
+  const components = [
     {
       title: 'Step 1',
       component: <SendCSV />,
@@ -53,7 +47,7 @@ const Ocurrencies = ({token}: TaxonomiesPageProps) => {
 
   useEffect(() => {
 
-    let newComponents = components.filter((component, index) => index < step);
+    const newComponents = components.filter((component, index) => index < step);
     setCurrentComponents(
       newComponents
     );
@@ -98,7 +92,7 @@ export const getServerSideProps = async (ctx: any) => {
 
   if (!token) {
 
-    let uuid = uuidv4();
+    const uuid = uuidv4();
     setCookie(ctx, 'usr.token', uuid, {
       maxAge: 60 * 60 * 24 * 7,
     });
